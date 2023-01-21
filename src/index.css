@@ -3,3 +3,28 @@
   margin: 0;
   box-sizing: border-box;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+.content {
+  display: flex;
+  width: 90%;
+}
+.sidebar, .details {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 20px;
+}
+.sidebar {
+  width: 200px;
+  background: lime;
+}
+.details {
+  flex: 1;
+  background-color: aquamarine;
+}
