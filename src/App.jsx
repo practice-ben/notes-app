@@ -7,8 +7,26 @@ export default function App () {
   const [notes, setNotes] = useState([]);
   
   function addNote(note) {
-    setNotes(prev => [...prev, note])
+    console.log(note)
+    // setNotes(prev => {
+    //   let id = prev.length += 1;
+    //   let title = note.substring(0, 25);
+
+    //   return (
+    //     [
+    //       ...prev, 
+    //       {
+    //         id: id,
+    //         title: title, 
+    //         text: note,
+    //       }
+    //     ]
+    //   )
+    // })
+
   }
+
+  console.log(notes)
 
   return (
     <div className="container" >
