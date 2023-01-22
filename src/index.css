@@ -28,3 +28,12 @@
   flex: 1;
   background-color: aquamarine;
 }
+
+.add-note {
+  padding: 5px;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  font-size: 18px;
+  margin-block: 10px;
+}
