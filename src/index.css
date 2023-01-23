@@ -66,9 +66,10 @@ form {
   padding: 5px;
   border-radius: 10px;
   outline: none;
-  text-align: center;
+  /* text-align: center; */
   font-size: 17px;
-
+  min-width: 300px;
+  min-height: 50px;
 }
 .add-note-btn {
   padding: 5px;
