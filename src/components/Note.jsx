@@ -1,4 +1,4 @@
-export default function Note({title, text}) {
+export default function Note({title, text, id, edit, delet}) {
     function respond() {
         const description = 
             `<div">
@@ -7,6 +7,7 @@ export default function Note({title, text}) {
             </div>`
         document.querySelector(".description").innerHTML = description;
     }
+
     return (
         <div className="note" onClick={respond}>
             <h4 className="note-title">{title}</h4>
@@ -20,8 +21,10 @@ export default function Note({title, text}) {
                 }
             </p>
             <div className="controls">
-                <div className="delete">X</div>
-                <div className="edit"><i className="fa-regular fa-pen-to-square"></i></div>
+                <div className="delete" onClick={() => delet(id)}>X</div>
+                <div className="edit" onClick={edit}>
+                    <i className="fa-regular fa-pen-to-square"></i>
+                </div>
             </div>
         </div>
     )

@@ -7,6 +7,22 @@ export default function App () {
   const [notes, setNotes] = useState([]);
   const [elements, setElements] = useState(null)
   
+  function edit () {
+    console.log("edit")
+  }
+  function delet (id) {
+      console.log(id)
+      setNotes(prev => {
+        const newArr = prev.slice();
+        prev.map((note, index) => {
+          if(note.id !== id) {
+            newArr.splice(index, 1);
+          }
+        })
+        return newArr;
+      })
+  }
+
   useEffect(() => {
     const localNotes = JSON.parse(localStorage.getItem("notes"));
     setNotes(localNotes);
@@ -15,6 +31,15 @@ export default function App () {
   useEffect(() => {
     if(notes.length > 0) {
       localStorage.setItem("notes", JSON.stringify(notes))
+    }
+  }, [notes])
+  
+  useEffect(() => {
+    if(notes.length > 0) {
+      const ele = notes.map(obj => {
+        return <Note key={obj.id} {...obj} edit={edit} delet={delet} />
+      })
+      setElements(ele)
     }
   }, [notes])
 
@@ -47,14 +72,8 @@ export default function App () {
     })
   }
 
-  useEffect(() => {
-    if(notes.length > 0) {
-      const ele = notes.map(obj => {
-        return <Note key={obj.id} {...obj} />
-      })
-      setElements(ele)
-    }
-  }, [notes])
+
+
 
   return (
     <div className="container" >
