@@ -23,12 +23,12 @@ export default function App () {
         ]
       } else {
         newNote = [
-          ...prev, 
           {
             id: id,
             title: title, 
             text: note,
-          }
+          },
+          ...prev 
         ]
       }
 

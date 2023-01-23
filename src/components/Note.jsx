@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function Note({title, text}) {
     return (
         <div className="note">
