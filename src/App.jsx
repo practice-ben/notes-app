@@ -7,12 +7,23 @@ export default function App () {
   const [notes, setNotes] = useState([]);
   const [elements, setElements] = useState(null)
   
+  useEffect(() => {
+    const localNotes = JSON.parse(localStorage.getItem("notes"));
+    setNotes(localNotes);
+  }, [])
+
+  useEffect(() => {
+    if(notes.length > 0) {
+      localStorage.setItem("notes", JSON.stringify(notes))
+    }
+  }, [notes])
+
   function addNote(note) {
     setNotes(prev => {
       let id = prev.length + 1;
       let title = note.substring(0, 25);
       let newNote;
-
+      
       if(prev.length === 0) {
         newNote = [
           {
