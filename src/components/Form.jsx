@@ -22,6 +22,7 @@ export default function Form({addNote}) {
                 onClick={(e) => {
                     e.preventDefault();
                     addNote(note)
+                    setNote("")
                 }} 
             >
                     Add Note
