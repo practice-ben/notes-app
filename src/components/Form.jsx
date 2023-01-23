@@ -7,7 +7,6 @@ export default function Form({addNote}) {
     function respond(e) {
         e.preventDefault();
         setNote(e.target.value);
-
     }
     
     return (

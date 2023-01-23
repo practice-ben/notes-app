@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Note from "./components/Note";
 import Form from "./components/Form";
 
 export default function App () {
   // state to manage notes
   const [notes, setNotes] = useState([]);
+  const [elements, setElements] = useState(null)
   
   function addNote(note) {
-    console.log(note)
     setNotes(prev => {
       let id = prev.length + 1;
       let title = note.substring(0, 25);
@@ -34,8 +34,16 @@ export default function App () {
 
       return newNote;
     })
-
   }
+
+  useEffect(() => {
+    if(notes.length > 0) {
+      const ele = notes.map(obj => {
+        return <Note key={obj.id} {...obj} />
+      })
+      setElements(ele)
+    }
+  }, [notes])
 console.log(notes)
   return (
     <div className="container" >
@@ -44,7 +52,7 @@ console.log(notes)
       <div className="content">
         <div className="sidebar">
           {/* This will hold a summarized note */}
-          <Note />
+          {elements}
         </div>
         <div className="details">
           {/* This will hold a detailed note */}

@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export default function Note(props) {
+export default function Note({title, text}) {
     return (
         <div className="note">
-            <h4 className="note-title">This is the title</h4>
+            <h4 className="note-title">{title}</h4>
             <p className="note-description">
-                This is the note description
+                {text}
             </p>
         </div>
     )
