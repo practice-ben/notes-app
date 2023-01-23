@@ -47,7 +47,7 @@ export default function App () {
 
   return (
     <div className="container" >
-      <h1>Notes App</h1>
+      <h1 className="notes-title">Notes App</h1>
       <Form addNote={addNote} />
       <div className="content">
         <div className="sidebar">
