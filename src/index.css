@@ -56,20 +56,28 @@
 }
 
 form {
-  height: 40px;
+  /* height: 40px; */
   display: flex;
   margin-block: 10px;
   gap: 10px;
 }
 
-.add-note, .add-note-btn {
+.add-note{
   padding: 5px;
   border-radius: 10px;
   outline: none;
   text-align: center;
   font-size: 17px;
+
 }
 .add-note-btn {
+  padding: 5px;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  font-size: 17px;
+  margin-top: auto;
+
   background: rgb(87, 87, 253);
   color: white;
   font-weight: 600;

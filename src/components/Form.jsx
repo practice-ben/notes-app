@@ -11,8 +11,7 @@ export default function Form({addNote}) {
     
     return (
         <form onChange={(e) => e.preventDefault()}>
-            <input 
-                type="text" 
+            <textarea 
                 placeholder="Add New Note" 
                 className="add-note"
                 onChange={respond} 
