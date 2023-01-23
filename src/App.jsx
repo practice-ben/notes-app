@@ -56,7 +56,7 @@ console.log(notes)
         </div>
         <div className="details">
           {/* This will hold a detailed note */}
-          <h2>description</h2>
+          <h1 className="description-title">Description</h1>
           <div className="description"></div>
         </div>
       </div>
