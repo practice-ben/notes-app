@@ -66,10 +66,11 @@ form {
   padding: 5px;
   border-radius: 10px;
   outline: none;
-  /* text-align: center; */
   font-size: 17px;
   min-width: 300px;
+  max-width: 70vw;
   min-height: 50px;
+  max-height: 15vh;
 }
 .add-note-btn {
   padding: 5px;
@@ -77,7 +78,7 @@ form {
   outline: none;
   text-align: center;
   font-size: 17px;
-  margin-top: auto;
+  margin: auto 0;
 
   background: rgb(87, 87, 253);
   color: white;
