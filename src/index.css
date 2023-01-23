@@ -124,7 +124,7 @@ form {
   font-style: italic;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .sidebar {
     width: 150px;
   }
@@ -133,5 +133,9 @@ form {
     display: flex;
     flex-direction: column;
     padding-bottom: 15px;
+  }
+  .description-title {
+    font-size: 20px;
+    color: blue;
   }
 }
