@@ -44,7 +44,7 @@ export default function App () {
       setElements(ele)
     }
   }, [notes])
-console.log(notes)
+
   return (
     <div className="container" >
       <h1>Notes App</h1>

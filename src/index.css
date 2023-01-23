@@ -29,13 +29,26 @@
   background-color: aquamarine;
 }
 
-.add-note {
+form {
+  height: 40px;
+  display: flex;
+  margin-block: 10px;
+  gap: 10px;
+}
+
+.add-note, .add-note-btn {
   padding: 5px;
   border-radius: 10px;
   outline: none;
   text-align: center;
-  font-size: 18px;
-  margin-block: 10px;
+  font-size: 17px;
+}
+.add-note-btn {
+  background: rgb(87, 87, 253);
+  color: white;
+  font-weight: 600;
+  border: none;
+
 }
 
 .note {
@@ -75,6 +88,7 @@
     width: 150px;
   }
   form {
+    height: fit-content;
     display: flex;
     flex-direction: column;
     padding-bottom: 15px;
