@@ -8,26 +8,35 @@ export default function App () {
   
   function addNote(note) {
     console.log(note)
-    // setNotes(prev => {
-    //   let id = prev.length += 1;
-    //   let title = note.substring(0, 25);
+    setNotes(prev => {
+      let id = prev.length + 1;
+      let title = note.substring(0, 25);
+      let newNote;
 
-    //   return (
-    //     [
-    //       ...prev, 
-    //       {
-    //         id: id,
-    //         title: title, 
-    //         text: note,
-    //       }
-    //     ]
-    //   )
-    // })
+      if(prev.length === 0) {
+        newNote = [
+          {
+            id: id,
+            title: title, 
+            text: note,
+          }
+        ]
+      } else {
+        newNote = [
+          ...prev, 
+          {
+            id: id,
+            title: title, 
+            text: note,
+          }
+        ]
+      }
+
+      return newNote;
+    })
 
   }
-
-  console.log(notes)
-
+console.log(notes)
   return (
     <div className="container" >
       <h1>Notes App</h1>

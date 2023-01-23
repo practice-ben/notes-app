@@ -5,16 +5,28 @@ export default function Form({addNote}) {
     const [note, setNote] = useState("");
 
     function respond(e) {
-        if(e.key === "Enter") {
-            addNote(note)
-        } else {
-            setNote(e.target.value);
-        }
-    }
+        e.preventDefault();
+        setNote(e.target.value);
 
+    }
+    
     return (
-        <form>
-            <input type="text" placeholder="Add New Note" className="add-note" onKeyUp={respond} onChange={respond} value={note} />
+        <form onChange={(e) => e.preventDefault()}>
+            <input 
+                type="text" 
+                placeholder="Add New Note" 
+                className="add-note"
+                onChange={respond} 
+                value={note} 
+            />
+            <button className="add-note-btn"
+                onClick={(e) => {
+                    e.preventDefault();
+                    addNote(note)
+                }} 
+            >
+                    Add Note
+            </button>
         </form>
     )
 }
