@@ -1,3 +1,21 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: lime;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(15, 68, 1);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 * {
   padding: 0;
   margin: 0;
@@ -14,10 +32,12 @@
   width: 90%;
 }
 .sidebar, .details {
-  padding: 20px 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-height: 85vh;
+  overflow-y: scroll;
 }
 .sidebar {
   width: 200px;

@@ -1,6 +1,5 @@
 export default function Note({title, text}) {
     function respond() {
-        console.log(title, text)
         const description = 
             `<div">
                 <h2 class="title">${title.toString()}</h2>
