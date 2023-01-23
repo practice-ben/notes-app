@@ -19,6 +19,10 @@ export default function Note({title, text}) {
                     `${text.split(" ").slice(0, 6).join(" ")}`
                 }
             </p>
+            <div className="controls">
+                <div className="delete">X</div>
+                <div className="edit"><i className="fa-regular fa-pen-to-square"></i></div>
+            </div>
         </div>
     )
 }
