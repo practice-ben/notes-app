@@ -11,7 +11,13 @@ export default function Note({title, text}) {
         <div className="note" onClick={respond}>
             <h4 className="note-title">{title}</h4>
             <p className="note-description">
-                {text}
+                {
+                    text.split(" ").length > 6 
+                    ?
+                    `${text.split(" ").slice(0, 6).join(" ")}...`
+                    :
+                    `${text.split(" ").slice(0, 6).join(" ")}`
+                }
             </p>
         </div>
     )
