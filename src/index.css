@@ -21,6 +21,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  background: rgba(0, 255, 0, 0.6);
+}
 .notes-title {
   text-transform: uppercase;
   font-size: 40px;
