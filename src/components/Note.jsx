@@ -2,8 +2,8 @@ export default function Note({title, text}) {
     function respond() {
         const description = 
             `<div">
-                <h2 class="title">${title.toString()}</h2>
-                <p class="text">${text.toString()}</p>
+                <h2 class="title">${title}</h2>
+                <p class="text">${text}</p>
             </div>`
         document.querySelector(".description").innerHTML = description;
     }
