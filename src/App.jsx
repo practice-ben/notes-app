@@ -6,7 +6,7 @@ import { v4 as idKey } from "uuid";
 export default function App () {
   // state to manage notes
   const [notes, setNotes] = useState([]);
-  const [elements, setElements] = useState()
+  const [elements, setElements] = useState(null)
   
   function edit (id) {
     const edited = notes.filter(note => note.id === id);
