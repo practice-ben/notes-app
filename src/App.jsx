@@ -40,7 +40,7 @@ export default function App () {
       let title = note.substring(0, 25);
       let newNote;
       
-      if(prev.length === 0) {
+      if(!prev) {
         newNote = [
           {
             id: id,
