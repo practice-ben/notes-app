@@ -6,20 +6,12 @@ import { v4 as idKey } from "uuid";
 export default function App () {
   // state to manage notes
   const [notes, setNotes] = useState([]);
-  const [elements, setElements] = useState(null)
+
+  const elements = notes?.map(obj => {
+    const key = idKey();
+    return <Note key={key} {...obj} edit={edit} delet={delet} />
+  })
   
-  function edit (id) {
-    const edited = notes.filter(note => note.id === id);
-    console.log(edited)
-  }
-  function delet (id) {
-      setNotes(prev => {
-        const newArr = prev.filter((note, index) => note.id != id);
-        return newArr
-      })
-  }
-
-
   useEffect(() => {
     const localNotes = JSON.parse(localStorage.getItem("notes"));
     setNotes(localNotes);
@@ -30,16 +22,17 @@ export default function App () {
       localStorage.setItem("notes", JSON.stringify(notes))
     }
   }, [notes])
-  
-  useEffect(() => {
-      if(notes) {
-        const ele = notes.map(obj => {
-          const key = idKey();
-          return <Note key={key} {...obj} edit={edit} delet={delet} />
-        })
-        setElements(ele)
-      }
-  }, [notes])
+
+  function edit (id) {
+    const edited = notes.filter(note => note.id === id);
+    console.log(edited)
+  }
+  function delet (id) {
+      setNotes(prev => {
+        const newArr = prev.filter((note, index) => note.id != id);
+        return newArr
+      })
+  }
 
   function addNote(note) {
     setNotes(prev => {
@@ -69,9 +62,6 @@ export default function App () {
       return newNote;
     })
   }
-
-
-
 
   return (
     <div className="container" >
