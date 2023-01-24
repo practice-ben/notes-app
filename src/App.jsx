@@ -32,11 +32,13 @@ export default function App () {
   }, [notes])
   
   useEffect(() => {
-      const ele = notes.map(obj => {
-        const key = idKey();
-        return <Note key={key} {...obj} edit={edit} delet={delet} />
-      })
-      setElements(ele)
+      if(notes) {
+        const ele = notes.map(obj => {
+          const key = idKey();
+          return <Note key={key} {...obj} edit={edit} delet={delet} />
+        })
+        setElements(ele)
+      }
   }, [notes])
 
   function addNote(note) {
