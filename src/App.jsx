@@ -1,27 +1,23 @@
 import { useState, useEffect } from "react";
 import Note from "./components/Note";
 import Form from "./components/Form";
+import { v4 as idKey } from "uuid";
 
 export default function App () {
   // state to manage notes
   const [notes, setNotes] = useState([]);
-  const [elements, setElements] = useState(null)
+  const [elements, setElements] = useState()
   
   function edit () {
     console.log("edit")
   }
   function delet (id) {
-      console.log(id)
       setNotes(prev => {
-        const newArr = prev.slice();
-        prev.map((note, index) => {
-          if(note.id !== id) {
-            newArr.splice(index, 1);
-          }
-        })
-        return newArr;
+        const newArr = prev.filter((note, index) => note.id != id);
+        return newArr
       })
   }
+
 
   useEffect(() => {
     const localNotes = JSON.parse(localStorage.getItem("notes"));
@@ -35,17 +31,16 @@ export default function App () {
   }, [notes])
   
   useEffect(() => {
-    if(notes.length > 0) {
       const ele = notes.map(obj => {
-        return <Note key={obj.id} {...obj} edit={edit} delet={delet} />
+        const key = idKey();
+        return <Note key={key} {...obj} edit={edit} delet={delet} />
       })
       setElements(ele)
-    }
   }, [notes])
 
   function addNote(note) {
     setNotes(prev => {
-      let id = prev.length + 1;
+      let id = idKey();
       let title = note.substring(0, 25);
       let newNote;
       
