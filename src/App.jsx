@@ -8,8 +8,9 @@ export default function App () {
   const [notes, setNotes] = useState([]);
   const [elements, setElements] = useState()
   
-  function edit () {
-    console.log("edit")
+  function edit (id) {
+    const edited = notes.filter(note => note.id === id);
+    console.log(edited)
   }
   function delet (id) {
       setNotes(prev => {

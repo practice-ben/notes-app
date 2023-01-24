@@ -22,7 +22,7 @@ export default function Note({title, text, id, edit, delet}) {
             </p>
             <div className="controls">
                 <div className="delete" onClick={() => delet(id)}>X</div>
-                <div className="edit" onClick={edit}>
+                <div className="edit" onClick={() => edit(id)}>
                     <i className="fa-regular fa-pen-to-square"></i>
                 </div>
             </div>
