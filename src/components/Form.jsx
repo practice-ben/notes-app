@@ -20,7 +20,11 @@ export default function Form({addNote}) {
             <button className="add-note-btn"
                 onClick={(e) => {
                     e.preventDefault();
-                    addNote(note)
+                    if(note?.length > 0) {
+                        addNote(note)
+                    } else {
+                        alert("Note cannot be empty")
+                    }
                     setNote("")
                 }} 
             >

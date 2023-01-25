@@ -15,17 +15,6 @@ export default function App () {
   
   const styles = {
     descriptionShown: {
-      // maxWidth: "60ch",
-      // margin: "0 auto",
-      // backgroundColor: "lime",
-      // width: "60%",
-      // paddingBlock: "20px",
-      // display: "flex",
-      // flexDirection: "column",
-      // justifyContent: "center",
-      // alignItems: "center",
-      // borderRadius: "10px",
-      // boxShadow: "0px 0px 5px",
       display: "flex"
     }
   }
