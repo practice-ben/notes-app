@@ -30,6 +30,7 @@ export default function App () {
   }, [notes])
 
   function shown(bool) {
+    console.log("called")
     if(bool == undefined) {
       setShow(prev => !prev);
     } else {
@@ -86,8 +87,9 @@ export default function App () {
           {/* This will hold a summarized note */}
           {elements}
         </div>
-        <div className="details">
+        <div className={show ? "details" : "hide"}>
           {/* This will hold a detailed note */}
+          <div className="close" onClick={() => shown(false)}>X</div>
           <h1 className="description-title">Description</h1>
           <div className={show ? `${styles.descriptionShown} description` : "description hide"}></div>
         </div>

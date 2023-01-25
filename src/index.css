@@ -91,7 +91,7 @@ form {
   color: black;
   font-weight: 600;
   border: none;
-
+  cursor: pointer;
 }
 
 .note {
@@ -170,13 +170,18 @@ form {
   font-size: 18px;
   font-style: italic;
 }
+.close {
+  margin-left: auto;
+  font-weight: 700;
+  color: red;
+  cursor: pointer;
+}
 
 @media (max-width: 500px) {
   .sidebar {
     width: 100%;
     max-width: 400px;
     margin: auto;
-    /* border-radius: 30px; */
   }
   form {
     height: fit-content;
@@ -185,7 +190,8 @@ form {
     padding-bottom: 15px;
   }
   .details {
-    display: none;
+    position: absolute;
+    width: 90vw;
   }
   .description {
     width: 100%;

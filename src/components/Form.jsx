@@ -23,7 +23,7 @@ export default function Form({addNote}) {
                     if(note?.length > 0) {
                         addNote(note)
                     } else {
-                        alert("Note cannot be empty")
+                        alert("A note cannot be empty")
                     }
                     setNote("")
                 }} 
