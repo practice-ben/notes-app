@@ -1,15 +1,16 @@
 export default function Note({title, text, id, edit, delet}) {
-    function respond() {
+    function showDescription() {
         const description = 
             `<div">
                 <h2 class="title">${title}</h2>
                 <p class="text">${text}</p>
             </div>`
-        document.querySelector(".description").innerHTML = description;
+        const descriptionContainer = document.querySelector(".description");
+        descriptionContainer.innerHTML = description;
     }
 
     return (
-        <div className="note" onClick={respond}>
+        <div className="note" onClick={showDescription}>
             <h4 className="note-title">{title}</h4>
             <p className="note-description">
                 {
