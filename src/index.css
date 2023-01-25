@@ -75,6 +75,8 @@ form {
   max-width: 70vw;
   min-height: 50px;
   max-height: 15vh;
+  background: limegreen;
+  color: black;
 }
 .add-note-btn {
   padding: 5px;
@@ -142,13 +144,16 @@ form {
   margin: 0 auto;
   background-color: lime;
   width: 60%;
-  padding-block: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   box-shadow: 0px 0px 5px;
+}
+.hide {
+  display: none;
 }
 .description-title {
   text-decoration: underline;
@@ -172,6 +177,9 @@ form {
     display: flex;
     flex-direction: column;
     padding-bottom: 15px;
+  }
+  .description {
+    width: 100%;
   }
   .description-title {
     font-size: 20px;

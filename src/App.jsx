@@ -6,12 +6,29 @@ import { v4 as idKey } from "uuid";
 export default function App () {
   // state to manage notes
   const [notes, setNotes] = useState([]);
+  const [show, setShow] = useState(false);
 
   const elements = notes?.map(obj => {
     const key = idKey();
-    return <Note key={key} {...obj} edit={edit} delet={delet} />
+    return <Note key={key} {...obj} shown={shown} edit={edit} delet={delet} />
   })
   
+  const styles = {
+    descriptionShown: {
+      // maxWidth: "60ch",
+      // margin: "0 auto",
+      // backgroundColor: "lime",
+      // width: "60%",
+      // paddingBlock: "20px",
+      // display: "flex",
+      // flexDirection: "column",
+      // justifyContent: "center",
+      // alignItems: "center",
+      // borderRadius: "10px",
+      // boxShadow: "0px 0px 5px",
+      display: "flex"
+    }
+  }
   useEffect(() => {
     const localNotes = JSON.parse(localStorage.getItem("notes"));
     setNotes(localNotes);
@@ -22,6 +39,14 @@ export default function App () {
       localStorage.setItem("notes", JSON.stringify(notes))
     }
   }, [notes])
+
+  function shown(bool) {
+    if(bool == undefined) {
+      setShow(prev => !prev);
+    } else {
+      setShow(bool);
+    }
+  }
 
   function edit (id) {
     const edited = notes.filter(note => note.id === id);
@@ -75,7 +100,7 @@ export default function App () {
         <div className="details">
           {/* This will hold a detailed note */}
           <h1 className="description-title">Description</h1>
-          <div className="description"></div>
+          <div className={show ? `${styles.descriptionShown} description` : "description hide"}></div>
         </div>
       </div>
     </div>

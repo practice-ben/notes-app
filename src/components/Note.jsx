@@ -1,4 +1,4 @@
-export default function Note({title, text, id, edit, delet}) {
+export default function Note({title, text, id, edit, delet, shown}) {
     function showDescription() {
         const description = 
             `<div">
@@ -7,6 +7,7 @@ export default function Note({title, text, id, edit, delet}) {
             </div>`
         const descriptionContainer = document.querySelector(".description");
         descriptionContainer.innerHTML = description;
+        shown();
     }
 
     return (
@@ -22,8 +23,17 @@ export default function Note({title, text, id, edit, delet}) {
                 }
             </p>
             <div className="controls">
-                <div className="delete" onClick={() => delet(id)}>X</div>
-                <div className="edit" onClick={() => edit(id)}>
+                <div className="delete" onClick={() => {
+                    delet(id)
+                    shown(true)
+                    }}
+                >
+                    X
+                </div>
+                <div className="edit" onClick={() => {
+                    edit(id)
+                    shown(true)
+                }}>
                     <i className="fa-regular fa-pen-to-square"></i>
                 </div>
             </div>
